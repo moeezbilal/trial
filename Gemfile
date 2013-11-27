@@ -6,11 +6,14 @@ gem  'mysql2'
 
 # gem 'rails', '3.2.14'
 # gem install activerecord-mysql2-adapter
-
-
+gem "nokogiri","1.5.10"
+gem "contacts", :git => "git://github.com/abhilashak/contacts.git"
+gem "gdata", :git => "git://github.com/abhilashak/gdata-1.git"
 # Use unicorn as the web server
 # gem 'unicorn'
 
+gem "rmagick"
+gem "carrierwave"
 # Deploy with Capistrano
 # gem 'capistrano'
 

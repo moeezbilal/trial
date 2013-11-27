@@ -2,7 +2,8 @@ Bootstrap::Application.routes.draw do
 
   get "users/show"
 
-  resources :feedbacks
+  resources :feedbacks 
+  
 
   #devise_for :admin_users, ActiveAdmin::Devise.config
 
@@ -10,9 +11,9 @@ Bootstrap::Application.routes.draw do
 
   get "home/index"
 
-  get "sign_in/index"
+  # get "sign_in/index"
 
-  get "sign_in/changepassword"
+  # get "sign_in/changepassword"
 
   get "home/whatislinkedin"
 
@@ -22,9 +23,18 @@ Bootstrap::Application.routes.draw do
 
   get "signup/index"
 
-  devise_for :users
+get "experience/new"
+get "experience/imageloader"
+post "experience/imageloader2"
+
+post "experience/create"
+post "experience/step2"
+  # devise_for :users
+devise_for :users, :controllers => { :registrations => "registrations" }
 
 
+# post ':controller(/:action(/:id(.:format)))'
+# get ':controller(/:action(/:id(.:format)))'
   #resources :users, :only => [:show]
   resources :users
 
@@ -91,6 +101,5 @@ Bootstrap::Application.routes.draw do
   root :to => "home#index"
 #  match ':controller(/:action(/:id(.:format)))'
   match 'home/index' => 'home#index'
-  
 
 end
